@@ -1,0 +1,21 @@
+.global _start
+_start:
+
+	mov 3, %l1
+	mov 4, %l2
+	mov 0, %l3
+
+loop:
+	subcc %l1, 1, %l1
+	bneg end
+	nop
+
+	add %l2, %l3, %l3
+	ba loop
+	nop
+
+end: mov %l3, %o0
+
+	ret
+	
+	
